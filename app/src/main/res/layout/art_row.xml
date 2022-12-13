@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/art_row_image_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@color/cardview_dark_background"
+        android:scaleType="centerCrop">
+
+    </ImageView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/art_row_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="4dp"
+            android:textSize="24sp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/art_row_artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Artist"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="4dp"
+            android:textSize="20sp">
+
+        </TextView>
+        <TextView
+            android:id="@+id/art_row_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="4dp"
+            android:textSize="20sp">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
