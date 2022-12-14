@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/artFragment">
+
+    <fragment
+        android:id="@+id/artFragment"
+        android:name="com.volkankelleci.artbooktesting.view.ArtFragment"
+        android:label="ArtFragment" >
+        <action
+            android:id="@+id/action_artFragment_to_artsDetailFragments"
+            app:destination="@id/artsDetailFragments" />
+    </fragment>
+    <fragment
+        android:id="@+id/artsDetailFragments"
+        android:name="com.volkankelleci.artbooktesting.view.ArtsDetailFragments"
+        android:label="ArtsDetailFragments" >
+        <action
+            android:id="@+id/action_artsDetailFragments_to_imageApiFragments"
+            app:destination="@id/imageApiFragments" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageApiFragments"
+        android:name="com.volkankelleci.artbooktesting.view.ImageApiFragments"
+        android:label="ImageApiFragments" />
+</navigation>
