@@ -17,6 +17,7 @@ import javax.inject.Inject
 class ArtRecyclerAdapter@Inject constructor(
     val glide:RequestManager
 ) : RecyclerView.Adapter<ArtRecyclerAdapter.ArtViewHolder>() {
+
     class ArtViewHolder(itemView:View):RecyclerView.ViewHolder(itemView)
 
     private val diffUtil=object :DiffUtil.ItemCallback<Art>(){

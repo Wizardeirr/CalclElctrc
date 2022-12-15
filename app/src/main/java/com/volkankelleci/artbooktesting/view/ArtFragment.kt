@@ -15,7 +15,10 @@ import com.volkankelleci.artbooktesting.adapter.ArtRecyclerAdapter
 import com.volkankelleci.artbooktesting.databinding.FragmentArtsBinding
 import com.volkankelleci.artbooktesting.viewmodel.ArtViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject
+@ExperimentalCoroutinesApi
+@AndroidEntryPoint
 class ArtFragment @Inject constructor(
     val artRecyclerAdapter:ArtRecyclerAdapter
 ): Fragment(R.layout.fragment_arts) {
@@ -41,18 +44,14 @@ class ArtFragment @Inject constructor(
 
 
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel=ViewModelProvider(requireActivity()).get(ArtViewModel::class.java)
-
-
-
-
         val binder=FragmentArtsBinding.bind(view)
         fragmentBinder=binder
+        observeSubscribe()
+
 
         binder.recyclerViewArt.adapter=artRecyclerAdapter
         binder.recyclerViewArt.layoutManager=LinearLayoutManager(requireContext())
