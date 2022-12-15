@@ -2,7 +2,13 @@ package com.volkankelleci.artbooktesting.dependencyinjection
 
 import android.content.Context
 import androidx.room.Room
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.volkankelleci.artbooktesting.R
 import com.volkankelleci.artbooktesting.api.RetrofitAPI
+import com.volkankelleci.artbooktesting.repo.ArtReporistoryInterFace
+import com.volkankelleci.artbooktesting.repo.ArtRepository
+import com.volkankelleci.artbooktesting.roomdb.ArtDao
 import com.volkankelleci.artbooktesting.roomdb.ArtDatabase
 import com.volkankelleci.artbooktesting.util.Util.BASE_URL
 import dagger.Module
@@ -33,5 +39,16 @@ object AppModule {
             .addConverterFactory(GsonConverterFactory.create()).build()
             .create(RetrofitAPI::class.java)
     }
+    @Singleton
+    @Provides
+    fun injectNormalRepo(dao:ArtDao,api:RetrofitAPI)=ArtRepository(dao,api) as ArtReporistoryInterFace
+
+    @Singleton
+    @Provides
+    fun injectGlide(@ApplicationContext context: Context)=Glide.with(context)
+        .setDefaultRequestOptions(
+            RequestOptions().placeholder(R.drawable.ic_launcher_foreground)
+                .error(R.drawable.ic_launcher_foreground)
+        )
 
 }

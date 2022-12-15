@@ -1,17 +1,17 @@
 package com.volkankelleci.artbooktesting.viewmodel
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.volkankelleci.artbooktesting.model.ImageResponse
 import com.volkankelleci.artbooktesting.repo.ArtReporistoryInterFace
-import com.volkankelleci.artbooktesting.repo.ArtRepository
 import com.volkankelleci.artbooktesting.roomdb.Art
 import com.volkankelleci.artbooktesting.util.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-
-class ArtViewModel @ViewModelInject constructor(
+import javax.inject.Inject
+@HiltViewModel
+class ArtViewModel @Inject constructor(
     private val repository: ArtReporistoryInterFace
 ):ViewModel(){
 

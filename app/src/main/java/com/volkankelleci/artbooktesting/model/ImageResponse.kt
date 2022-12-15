@@ -2,7 +2,7 @@ package com.volkankelleci.artbooktesting.model
 
 
 data class ImageResponse(
-    val imageResults: List<ImageResult>,
+    val hits: List<ImageResult>,
     val total: Int,
     val totalHits: Int
 )
