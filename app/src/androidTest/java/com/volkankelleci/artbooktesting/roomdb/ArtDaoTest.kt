@@ -40,7 +40,12 @@ class ArtDaoTest(){
         assertThat(list).contains(input)
 
     }
+    @Test
     fun deleteArtTesting()= runBlockingTest{
 
+        val input2=Art("MONA","SISA",1900,"www.mulayim.com",2)
+        dao.deleteAll(input2)
+        val deleteList=dao.observeArts().getOrAwaitValue()
+        assertThat(deleteList).isEmpty()
     }
 }
