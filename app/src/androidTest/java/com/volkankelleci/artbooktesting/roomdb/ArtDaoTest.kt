@@ -6,6 +6,7 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.filters.SmallTest
 import com.google.common.truth.Truth.assertThat
 import com.volkankelleci.artbooktesting.getOrAwaitValue
+import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.After
@@ -15,6 +16,7 @@ import org.junit.Test
 
 @ExperimentalCoroutinesApi
 @SmallTest
+@HiltAndroidTest
 class ArtDaoTest(){
     @get:Rule
     var instantTaskExecutorRule=InstantTaskExecutorRule()
@@ -23,7 +25,7 @@ class ArtDaoTest(){
     @Before
     fun setUp(){
 
-        dataBase=Room.inMemoryDatabaseBuilder(ApplicationProvider.getApplicationContext(),ArtDatabase::class.java).allowMainThreadQueries().build()
+
         dao=dataBase.Dao()
     }
     @After
