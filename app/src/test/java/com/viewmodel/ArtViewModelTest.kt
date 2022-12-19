@@ -37,4 +37,18 @@ class ArtViewModelTest {
         assertThat(value.status).isEqualTo(Status.ERROR)
 
     }
+    @Test
+    fun withoutArtis(){
+        viewModel.makeArt("EWQEQW","","BUZ")
+        val value=viewModel.insertArtMessage.getOrAwaitValueTest()
+        assertThat(value.status).isEqualTo(Status.ERROR)
+
+    }
+    @Test
+    fun withoutYear(){
+        viewModel.makeArt("EWQEQW","321312","")
+        val value=viewModel.insertArtMessage.getOrAwaitValueTest()
+        assertThat(value.status).isEqualTo(Status.ERROR)
+
+    }
 }
