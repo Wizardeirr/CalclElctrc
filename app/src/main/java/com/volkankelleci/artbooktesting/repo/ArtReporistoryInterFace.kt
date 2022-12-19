@@ -9,5 +9,5 @@ interface ArtReporistoryInterFace{
     suspend fun insertArt(art: Art)
     suspend fun deleteAll(art:Art)
     fun getArts(): LiveData<List<Art>>
-    suspend fun imageSearch(searchQuery:String,):Resource<ImageResponse>
+    suspend fun imageSearch(searchQuery:String):Resource<ImageResponse>
 }

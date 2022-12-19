@@ -13,14 +13,12 @@ class ArtRepository@Inject constructor(
     private val retrofitAPI: RetrofitAPI
 ):ArtReporistoryInterFace {
     override suspend fun insertArt(art: Art) {
-
         artDao.insertArt(art)
     }
 
     override suspend fun deleteAll(art: Art) {
         artDao.deleteAll(art)
     }
-
     override fun getArts(): LiveData<List<Art>> {
         return artDao.observeArts()
     }
