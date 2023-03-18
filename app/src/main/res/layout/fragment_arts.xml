@@ -22,17 +22,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
 
-<com.google.android.material.floatingactionbutton.FloatingActionButton
-android:id="@+id/floatingActionButton"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:clickable="true"
-app:srcCompat="@android:drawable/ic_menu_add"
-    app:layout_anchor="@id/recyclerViewArt"
-app:layout_anchorGravity="bottom|right"
-    android:layout_margin="10dp"
-    app:fabSize="normal"
-    android:backgroundTint="#0B93EE"/>
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
