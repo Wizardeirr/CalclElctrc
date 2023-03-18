@@ -1,7 +1,13 @@
 package com.volkankelleci.artbooktesting.view
 
+import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -46,25 +52,36 @@ class ArtFragment @Inject constructor(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        setHasOptionsMenu(true)
         viewModel=ViewModelProvider(requireActivity()).get(ArtViewModel::class.java)
         val binder=FragmentArtsBinding.bind(view)
         fragmentBinder=binder
         observeSubscribe()
 
 
+
         binder.recyclerViewArt.adapter=artRecyclerAdapter
         binder.recyclerViewArt.layoutManager=LinearLayoutManager(requireContext())
         ItemTouchHelper(swipeCallback).attachToRecyclerView(binder.recyclerViewArt)
 
-        binder.floatingActionButton.setOnClickListener {
-            findNavController().navigate(ArtFragmentDirections.actionArtFragmentToArtsDetailFragments())
-        }
     }
     fun observeSubscribe(){
         viewModel.artList.observe(viewLifecycleOwner,Observer{
             artRecyclerAdapter.arts=it
         })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        requireActivity().menuInflater.inflate(R.menu.electric_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if (item.itemId == R.id.calculate_menu_item) {
+            findNavController().navigate(ArtFragmentDirections.actionArtFragmentToArtsDetailFragments())
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onDestroyView() {
