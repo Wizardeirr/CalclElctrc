@@ -9,37 +9,22 @@
     <ImageView
         android:id="@+id/art_row_image_view"
         android:layout_width="100dp"
+        android:visibility="gone"
         android:layout_height="100dp"
         android:src="@color/cardview_dark_background"
         android:scaleType="centerCrop">
 
     </ImageView>
     <LinearLayout
+        android:background="#6A3446"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <TextView
-            android:id="@+id/art_row_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Name"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="4dp"
-            android:textSize="24sp">
 
-        </TextView>
         <TextView
+            android:textColor="@color/white"
+
             android:id="@+id/art_row_artist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Artist"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="4dp"
-            android:textSize="20sp">
-
-        </TextView>
-        <TextView
-            android:id="@+id/art_row_year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Date"
@@ -48,8 +33,31 @@
             android:textSize="20sp">
 
         </TextView>
+        <TextView
+            android:textColor="@color/white"
+            android:id="@+id/art_row_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Electric Cost Amount"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="4dp"
+            android:textSize="20sp">
 
+        </TextView>
 
+        <TextView
+            android:textColor="@color/white"
+            android:id="@+id/art_row_name"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amount Due($)"
+            android:layout_marginEnd="10dp"
+
+            android:layout_marginBottom="4dp"
+            android:textSize="24sp">
+
+        </TextView>
     </LinearLayout>
 
 
