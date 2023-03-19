@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
 import com.volkankelleci.artbooktesting.R
 import com.volkankelleci.artbooktesting.roomdb.Art
+import com.volkankelleci.artbooktesting.util.Util.calculateBill
+import com.volkankelleci.artbooktesting.util.Util.callCalc
 import javax.inject.Inject
 
 class ArtRecyclerAdapter@Inject constructor(
@@ -53,9 +55,9 @@ class ArtRecyclerAdapter@Inject constructor(
         val artisNameText=holder.itemView.findViewById<TextView>(R.id.art_row_artist)
         val art=arts[position]
         holder.itemView.apply {
-            nameText.text ="Name:${art.name}"
-            yearText.text = "Year:${art.year}"
-            artisNameText.text="Artis Name:${art.artistName}"
+            nameText.text ="Amount Due: ${calculateBill(art.year)} $"
+            yearText.text = "Electric Cost Amount: ${art.year} Unit"
+            artisNameText.text="Number of: ${art.id}"
             glide.load(art.imageUrl).into(imageView)
 
         }
