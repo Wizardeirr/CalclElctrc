@@ -47,14 +47,13 @@ class ArtViewModel @Inject constructor(
         repository.insertArt(art)
     }
         fun makeArt(name:String,artisName:String,year:String){
-            if (name.isEmpty() || artisName.isEmpty() || year.isEmpty()){
-                insertArtMsg.postValue(Resource.error("Please entry all titles",null))
+            if (year.isEmpty()){
+                insertArtMsg.postValue(Resource.error("Please entry numbers",null))
                 return
             }
             val yearInt=try {
                 year.toInt()
             }catch (e:Exception){
-                insertArtMsg.postValue(Resource.error("Please entry year as Number",null))
                 return
             }
             val art=Art(name,artisName,yearInt,selectedImage.value?:"")
