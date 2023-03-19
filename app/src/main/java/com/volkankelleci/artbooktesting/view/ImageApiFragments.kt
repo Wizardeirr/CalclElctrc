@@ -63,9 +63,6 @@ class ImageApiFragments@Inject constructor(
             viewModel.setSelectedItems(it)
         }
 
-
-
-
     }
     fun subscribeToObserver(){
         viewModel.imageList.observe(viewLifecycleOwner, Observer {
@@ -82,7 +79,7 @@ class ImageApiFragments@Inject constructor(
                     imageFragmentArtsBinding?.progressBar?.visibility=View.VISIBLE
                 }
                 Status.ERROR ->{
-                    Toast.makeText(requireContext(),it.message?:"Error",Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(),it.message?:"Success",Toast.LENGTH_LONG).show()
                     imageFragmentArtsBinding?.progressBar?.visibility=View.GONE
                 }
             }
